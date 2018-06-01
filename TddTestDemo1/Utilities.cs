@@ -24,5 +24,34 @@ namespace TddTestDemo1
 				throw new Exception("null is not allowed");
 			return $"<p>{text}</p>";
 		}
+
+		public static bool IsTrue(bool v)
+		{
+			return v;
+		}
+
+		public static int Multiply(int v1, int v2)
+		{
+			checked
+			{
+				return v1 * v2;
+			}
+		}
+
+		public static bool IsOdd(int v)
+		{
+			return v % 2 == 1;
+		}
+
+		public static string Repeat(char character, int count)
+		{
+			if (count < 0) throw new Exception("count must be positive");
+			string result = "";
+			for (int i = 0; i < count; i++)
+				result += character;
+			return result;
+		}
+
+		/*5 Skriv testfall för funktionen string Repeat(char, int). Den ska ta ett tecken och ett heltal som parameter, och returnera en string med lika många kopior av tecknet som talet. Tips: fundera på vilka olika sorters tillåtna respektive otillåtna värden respektive parameter har. Specen är inte fullständig utan du måste göra designbeslut.*/
 	}
 }
